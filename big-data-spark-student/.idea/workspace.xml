@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/rdd/airport/AirportUSALatitude.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/airport/AirportUSAMeanLatitude.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/nasa/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/nasa/Union.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AirportUSAMeanLatitude">
+  <component name="RunManager" selected="Application.Union">
     <configuration name="AirportUSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSA" />
       <module name="big-data-spark-student" />
@@ -113,13 +112,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UKPostCodeJoin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sql.UKPostCodeJoin" />
+    <configuration name="Union" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rdd.nasa.Union" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sql.*" />
+          <option name="PATTERN" value="rdd.nasa.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Union" />
         <item itemvalue="Application.AirportUSAMeanLatitude" />
         <item itemvalue="Application.AirportUSALatitude" />
         <item itemvalue="Application.AirportUSA" />
         <item itemvalue="Application.HelloWorld" />
-        <item itemvalue="Application.UKPostCodeJoin" />
       </list>
     </recent_temporary>
   </component>
