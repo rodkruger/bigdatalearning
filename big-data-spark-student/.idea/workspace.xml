@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/rdd/airport/AirportUSALatitude.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rdd/airport/AirportUSAMeanLatitude.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/airport/AirportUSA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/airport/AirportUSA.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +39,11 @@
     <property name="project.structure.side.proportion" value="0.35346097" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="rdd.airport" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -50,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AirportUSA">
+  <component name="RunManager" selected="Application.AirportUSAMeanLatitude">
     <configuration name="AirportUSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSA" />
       <module name="big-data-spark-student" />
@@ -65,13 +71,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatasetRDDConversion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sql.DatasetRDDConversion" />
+    <configuration name="AirportUSALatitude" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSALatitude" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sql.*" />
+          <option name="PATTERN" value="rdd.airport.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AirportUSAMeanLatitude" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSAMeanLatitude" />
+      <module name="big-data-spark-student" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rdd.airport.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,20 +106,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="rdd.math.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SortedWordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pairrdd.aggregation.SortedWordCount" />
-      <module name="big-data-spark-student" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pairrdd.aggregation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AirportUSAMeanLatitude" />
+        <item itemvalue="Application.AirportUSALatitude" />
         <item itemvalue="Application.AirportUSA" />
         <item itemvalue="Application.HelloWorld" />
         <item itemvalue="Application.UKPostCodeJoin" />
-        <item itemvalue="Application.DatasetRDDConversion" />
-        <item itemvalue="Application.SortedWordCount" />
       </list>
     </recent_temporary>
   </component>
