@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/AvgCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/AvgCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/RealEstateReduceAndSortByKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/RealEstateReduceAndSortByKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/WordCountReduceByKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/WordCountReduceByKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/AvgCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/AvgCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/RealEstateReduceAndSortByKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/RealEstateReduceAndSortByKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/WordCountReduceByKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/WordCountReduceByKey.class" afterDir="false" />
-    </list>
+    <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
