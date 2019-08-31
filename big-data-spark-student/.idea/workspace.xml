@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/nasa/Union.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/nasa/Union.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/AvgCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/AvgCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/RealEstateReduceAndSortByKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/RealEstateReduceAndSortByKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pairrdd/aggregation/WordCountReduceByKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pairrdd/aggregation/WordCountReduceByKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/AvgCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/AvgCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/RealEstateReduceAndSortByKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/RealEstateReduceAndSortByKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/WordCountReduceByKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/pairrdd/aggregation/WordCountReduceByKey.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,21 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Union">
-    <configuration name="AirportUSA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSA" />
-      <module name="big-data-spark-student" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="rdd.airport.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.RealEstateReduceAndSortByKey">
     <configuration name="AirportUSALatitude" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rdd.airport.AirportUSALatitude" />
       <module name="big-data-spark-student" />
@@ -98,13 +89,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="rdd.math.HelloWorld" />
+    <configuration name="RealEstateReduceAndSortByKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pairrdd.aggregation.RealEstateReduceAndSortByKey" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="rdd.math.*" />
+          <option name="PATTERN" value="pairrdd.aggregation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,6 +110,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="rdd.nasa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordCountReduceByKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pairrdd.aggregation.WordCountReduceByKey" />
+      <module name="big-data-spark-student" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pairrdd.aggregation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RealEstateReduceAndSortByKey" />
+        <item itemvalue="Application.WordCountReduceByKey" />
         <item itemvalue="Application.Union" />
         <item itemvalue="Application.AirportUSAMeanLatitude" />
         <item itemvalue="Application.AirportUSALatitude" />
-        <item itemvalue="Application.AirportUSA" />
-        <item itemvalue="Application.HelloWorld" />
       </list>
     </recent_temporary>
   </component>
