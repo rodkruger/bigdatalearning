@@ -6,10 +6,9 @@ import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.*;
-import org.codehaus.janino.Java;
-
-import static org.apache.spark.sql.functions.col;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.SparkSession;
 
 public class DatasetRDDConversion {
 

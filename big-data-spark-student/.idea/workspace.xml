@@ -4,8 +4,6 @@
     <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sql/DatasetRDDConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/DatasetRDDConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql/StronglyTypedStackOverflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/StronglyTypedStackOverflow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/DatasetRDDConversion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/DatasetRDDConversion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/HousePriceSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/HousePriceSQL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/Response.class" afterDir="false" />
