@@ -17,5 +17,21 @@ public class UKPostCodeJoin {
         // inicializando sessao com duas threads
         SparkSession session = SparkSession.builder().appName("ukpostcode").master("local[2]").getOrCreate();
 
+        // Carregando dados do postcode
+        Dataset<Row> postcode = session.read().
+                option("header", "true").
+                csv("in/uk-postcode.csv").
+                withColumn("Postcode", concat_ws("", col("Postcode"), lit(" ")));
+
+        // Carregando dados do markerspace
+        Dataset<Row> makerspace =
+                session.read().option("header", "true").csv("in/uk-makerspaces-identifiable-data.csv");
+
+        // Condição do join
+        Dataset<Row> joined = makerspace.join(postcode,
+                makerspace.col("Postcode").startsWith(postcode.col("Postcode")),
+                "left_outer");
+
+        joined.groupBy("Region").count().orderBy(col("count").desc()).show();
     }
 }
