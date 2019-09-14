@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2da85680-ebdf-4bc9-b5d7-c45b2887e019" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql/UKPostCodeJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/UKPostCodeJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/DatasetRDDConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/DatasetRDDConversion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/StronglyTypedStackOverflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/StronglyTypedStackOverflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/DatasetRDDConversion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/DatasetRDDConversion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/HousePriceSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/HousePriceSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/Response.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/StackOverFlowSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/StackOverFlowSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/StronglyTypedStackOverflow.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/StronglyTypedStackOverflow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/UKPostCodeJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bigdata-mapreduce-student/out/production/big-data-spark-student/sql/UKPostCodeJoin.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,9 +63,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UKPostCodeJoin">
-    <configuration name="HousePriceSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sql.HousePriceSQL" />
+  <component name="RunManager" selected="Application.DatasetRDDConversion">
+    <configuration name="DatasetRDDConversion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sql.DatasetRDDConversion" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -73,13 +78,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RealEstateReduceAndSortByKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pairrdd.aggregation.RealEstateReduceAndSortByKey" />
+    <configuration name="HousePriceSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sql.HousePriceSQL" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pairrdd.aggregation.*" />
+          <option name="PATTERN" value="sql.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,8 +106,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UKPostCodeJoin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sql.UKPostCodeJoin" />
+    <configuration name="StronglyTypedStackOverflow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sql.StronglyTypedStackOverflow" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -115,13 +120,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WordCountReduceByKey" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="pairrdd.aggregation.WordCountReduceByKey" />
+    <configuration name="UKPostCodeJoin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sql.UKPostCodeJoin" />
       <module name="big-data-spark-student" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pairrdd.aggregation.*" />
+          <option name="PATTERN" value="sql.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DatasetRDDConversion" />
+        <item itemvalue="Application.StronglyTypedStackOverflow" />
         <item itemvalue="Application.UKPostCodeJoin" />
         <item itemvalue="Application.HousePriceSQL" />
         <item itemvalue="Application.StackOverFlowSQL" />
-        <item itemvalue="Application.RealEstateReduceAndSortByKey" />
-        <item itemvalue="Application.WordCountReduceByKey" />
       </list>
     </recent_temporary>
   </component>

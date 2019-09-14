@@ -16,6 +16,24 @@ public class StronglyTypedStackOverflow {
         // inicializando sessao com duas threads
         SparkSession session = SparkSession.builder().appName("houseprice").master("local[2]").getOrCreate();
 
+        // Carregando os dados
+        Dataset<Row> dados =
+                session.read().
+                        option("header", "true").
+                        csv("in/2016-stack-overflow-survey-responses.csv");
+
+        // Obtendo apenas as colunas de interesse
+        Dataset<Row> selected =
+                dados.select(col("country"),
+                        col("age_midpoint").as("ageMidPoint").cast("double"),
+                        col("salary_midpoint").as("salaryMidPoint").cast("double"));
+
+        // Convertendo para um Dataset<Response>
+
+        Dataset<Response> convertido = selected.as(Encoders.bean(Response.class));
+
+        convertido.filter(r -> r.getCountry().equals("Brazil"));
+        convertido.show();
     }
 
 }
