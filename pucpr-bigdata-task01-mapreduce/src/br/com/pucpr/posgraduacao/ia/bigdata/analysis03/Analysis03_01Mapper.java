@@ -1,4 +1,4 @@
-package br.com.pucpr.posgraduacao.ia.bigdata.analysis01;
+package br.com.pucpr.posgraduacao.ia.bigdata.analysis03;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Map the commodity with more transactions
  */
-public class Analysis01_01Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class Analysis03_01Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
     /**
      * Maximum number of transactions
@@ -21,7 +21,7 @@ public class Analysis01_01Mapper extends Mapper<LongWritable, Text, Text, IntWri
      * Commodity with more transactions
      */
     private String maxCommodity;
-    
+
     @Override
     public void map(LongWritable key, Text value, Mapper.Context con) throws IOException, InterruptedException {
 
@@ -40,11 +40,11 @@ public class Analysis01_01Mapper extends Mapper<LongWritable, Text, Text, IntWri
     } // end map()
 
     @Override
-    protected void cleanup(Context context) throws IOException, InterruptedException {
+    protected void cleanup(Mapper.Context context) throws IOException, InterruptedException {
         Text outputKey = new Text(this.maxCommodity);
         IntWritable outputValue = new IntWritable(this.maxTransactionsCount);
 
         context.write(outputKey, outputValue);
     } // end cleanup()
 
-} // end Analysis01_01Mapper
+}
