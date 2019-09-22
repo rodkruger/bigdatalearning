@@ -6,11 +6,13 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
+/**
+ * Counts all transactions occurred for an especific key (commodity, country etc)
+ */
 public class Analysis01Reducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
-
-    public void reduce(Text word, Iterable<IntWritable> values, Context con)
-            throws IOException, InterruptedException {
+    @Override
+    public void reduce(Text word, Iterable<IntWritable> values, Context con) throws IOException, InterruptedException {
 
         int sum = 0;
 
@@ -18,8 +20,7 @@ public class Analysis01Reducer extends Reducer<Text, IntWritable, Text, IntWrita
             sum += valor.get();
         }
 
-        // Escrever no contexto
         con.write(word, new IntWritable(sum));
-    }
+    } // end reduce()
 
-}
+} // end Analysis01Reducer

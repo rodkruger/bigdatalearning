@@ -1,5 +1,6 @@
 package br.com.pucpr.posgraduacao.ia.bigdata.analysis01;
 
+import br.com.pucpr.posgraduacao.ia.bigdata.enums.TransactionColsEnum;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -7,26 +8,30 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
+/**
+ * Mapper used to lookup all transactions occurred in Brazil
+ */
 public class Analysis01Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-    public void map(LongWritable key, Text value, Context con)
-            throws IOException, InterruptedException {
+    @Override
+    public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 
-        // Obtendo o bloco em formato de String
+        // read the line in String format
         String line = value.toString();
 
-        // Divisão por espaços
-        String[] info = line.split(";");
+        // splitting by semicolon (.csv format used)
+        String[] values = line.split(";");
 
-        String pais = info[0];
+        String country = values[TransactionColsEnum.COUNTRY.getValue()];
 
-        if ("Brazil".equals(pais)) {
-            String mercadoria = info[3];
+        if ("Brazil".equals(country)) {
+            String commodity = values[TransactionColsEnum.COMMODITY.getValue()];
 
-            Text chaveSaida = new Text(mercadoria);
-            IntWritable valorSaida = new IntWritable(1);
+            Text outputKey = new Text(commodity);
+            IntWritable outputValue = new IntWritable(1);
 
-            con.write(chaveSaida, valorSaida);
+            context.write(outputKey, outputValue);
         }
-    }
-}
+    } // end map()
+
+} // end Analysis01Mapper

@@ -7,35 +7,38 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
+/**
+ * Map the commodity with more transactions
+ */
 public class Analysis01_01Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
-    private int numero_transacoes;
+    private int maxTransactionsCount;
 
-    private String mercadoria;
+    private String maxCommodity;
 
     @Override
-    public void map(LongWritable key, Text value, Mapper.Context con)
-            throws IOException, InterruptedException {
+    public void map(LongWritable key, Text value, Mapper.Context con) throws IOException, InterruptedException {
 
-        // Obtendo o bloco em formato de String
+        // read the line in String format
         String line = value.toString();
 
-        // Divisão por espaços
+        // splitting by tab (.csv format used)
         String[] info = line.split("\t");
 
-        int numero_transacoes = Integer.valueOf(info[info.length - 1]);
+        int numberOfTransactions = Integer.valueOf(info[1]);
 
-        if (numero_transacoes > this.numero_transacoes) {
-            this.mercadoria = info[0];
-            this.numero_transacoes = numero_transacoes;
+        if (numberOfTransactions > this.maxTransactionsCount) {
+            this.maxCommodity = info[0];
+            this.maxTransactionsCount = numberOfTransactions;
         }
-    }
+    } // end map()
 
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
-        Text chaveSaida = new Text(this.mercadoria);
-        IntWritable valorSaida = new IntWritable(this.numero_transacoes);
+        Text outputKey = new Text(this.maxCommodity);
+        IntWritable outputValue = new IntWritable(this.maxTransactionsCount);
 
-        context.write(chaveSaida, valorSaida);
-    }
-}
+        context.write(outputKey, outputValue);
+    } // end cleanup()
+
+} // end Analysis01_01Mapper
