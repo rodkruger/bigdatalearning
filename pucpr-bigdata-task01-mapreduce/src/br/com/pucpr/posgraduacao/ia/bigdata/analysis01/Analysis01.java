@@ -97,7 +97,7 @@ public class Analysis01 {
         FileInputFormat.addInputPath(job, input);
         FileOutputFormat.setOutputPath(job, output);
 
-        // execute the job and wait for its completion. the results are written in an intermediante file, that
+        // execute the job and wait for its completion. the results are written in an intermediate file, that
         // will be analyzed for another job in the sequence
         return job.waitForCompletion(true);
     } // end runAnalysis01()
