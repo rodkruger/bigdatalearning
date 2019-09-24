@@ -1,7 +1,8 @@
-package br.com.pucpr.posgraduacao.ia.bigdata.analysis07;
+package br.com.pucpr.posgraduacao.ia.bigdata.analysis08;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -11,10 +12,7 @@ import org.apache.log4j.BasicConfigurator;
 
 import java.io.IOException;
 
-/**
- * Analysis 07 - look for the maximum commercial code
- */
-public class Analysis07 {
+public class Analysis08 {
 
     /**
      * Main method. Instantiate the analysis class and run them
@@ -25,7 +23,7 @@ public class Analysis07 {
      */
     public static void main(String[] args) throws Exception {
 
-        Analysis07 analysis = new Analysis07(args);
+        Analysis08 analysis = new Analysis08(args);
 
         System.exit(analysis.runAnalysis01() ? 0 : 1);
 
@@ -42,26 +40,26 @@ public class Analysis07 {
     private String transactionsFilePath;
 
     /**
-     * Path to the maximum product code
+     * Path to the most expensive commodity
      */
-    private String maxCommCode;
+    private String mostExpensiveCommodity;
 
     /**
      * Output path for the files
      */
     private String outputDirectory;
 
-    public Analysis07(String args[]) throws IOException {
+    public Analysis08(String args[]) throws IOException {
         this.configuration = new Configuration();
 
         String[] files = new GenericOptionsParser(this.configuration, args).getRemainingArgs();
 
         this.transactionsFilePath = files[0];
         this.outputDirectory = files[1];
-        this.maxCommCode = this.outputDirectory + "/analysis07.csv";
+        this.mostExpensiveCommodity = this.outputDirectory + "/analysis08.csv";
 
         BasicConfigurator.configure();
-    } // end Analysis07()
+    } // end Analysis08()
 
     /**
      * Executes a select to find the maximum product code
@@ -76,19 +74,19 @@ public class Analysis07 {
         Path input = new Path(this.transactionsFilePath);
 
         // create the output path for the transactions count file
-        Path output = new Path(this.maxCommCode);
+        Path output = new Path(this.mostExpensiveCommodity);
 
         // job creation
-        Job job = new Job(this.configuration, "analysis07-job");
+        Job job = new Job(this.configuration, "analysis08-job");
 
         // set the mapper and reducer classes
-        job.setJarByClass(Analysis07.class);
-        job.setMapperClass(Analysis07Mapper.class);
-        job.setReducerClass(Analysis07Reducer.class);
+        job.setJarByClass(Analysis08.class);
+        job.setMapperClass(Analysis08Mapper.class);
+        job.setReducerClass(Analysis08Reducer.class);
 
         // set the output classes
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(DoubleWritable.class);
 
         // set the files for input and output
         FileInputFormat.addInputPath(job, input);
@@ -99,4 +97,4 @@ public class Analysis07 {
         return job.waitForCompletion(true);
     } // end runAnalysis01()
 
-} // end Analysis07
+} // end Analysis08
