@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pucpr-bigdata-task01-mapreduce.iml" filepath="$PROJECT_DIR$/pucpr-bigdata-task01-mapreduce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pucpr-bigdata-mapreduce.iml" filepath="$PROJECT_DIR$/pucpr-bigdata-mapreduce.iml" />
     </modules>
   </component>
 </project>
