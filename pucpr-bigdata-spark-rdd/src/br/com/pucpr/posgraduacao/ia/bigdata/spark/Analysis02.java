@@ -11,16 +11,16 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 /**
- * Process the number of transactions by commodity, only in Brazil
+ * Process the number of transactions by year
  */
-public class Analysis01 {
+public class Analysis02 {
 
     public static void main(String args[]) {
         // Application logger
         Logger.getLogger("org").setLevel(Level.ERROR);
 
         // Enable to use as threads as we need
-        SparkConf conf = new SparkConf().setAppName("analysis01").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("analysis02").setMaster("local[*]");
 
         // Setting up the Spark context
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -28,11 +28,11 @@ public class Analysis01 {
         // Load the values from the .csv data source
         JavaRDD<String> values = sc.textFile("in/transactions.csv");
 
-        // Filter all the transactions occurred in Brazil
-        values = values.filter(line -> AnalysisUtils.getValue(line, TransactionColsEnum.COUNTRY.getValue()).equals("Brazil"));
+        // Filter the first line
+        values = values.filter(line -> !line.startsWith("country_or_area;year"));
 
-        // Mapping the occurence of a transaction for an specific commodity
-        JavaPairRDD<String, Integer> transactions = values.mapToPair(getCommodity());
+        // Mapping the occurence of a transaction for an year
+        JavaPairRDD<String, Integer> transactions = values.mapToPair(getYear());
 
         // Group all the occurences and sum all the values
         transactions = transactions.reduceByKey((x, y) -> x + y);
@@ -40,9 +40,9 @@ public class Analysis01 {
         // Just to read the output in a more user friendly-way ... don't worry, I know about the memory consumption and
         // cluster considerations! :)
         transactions = transactions.coalesce(1);
-        
+
         // Analysis done!
-        transactions.saveAsTextFile("out/analysis01.csv");
+        transactions.saveAsTextFile("out/analysis02.csv");
     }
 
     /**
@@ -50,17 +50,17 @@ public class Analysis01 {
      *
      * @return
      */
-    private static PairFunction<String, String, Integer> getCommodity() {
+    private static PairFunction<String, String, Integer> getYear() {
         PairFunction<String, String, Integer> func;
 
         func = transaction -> {
             String[] values = transaction.split(AnalysisUtils.COLSEPARATOR);
-            String commodity = values[TransactionColsEnum.COMMODITY.getValue()];
+            String year = values[TransactionColsEnum.YEAR.getValue()];
             Integer occurrence = Integer.valueOf(1);
-            return new Tuple2<>(commodity, occurrence);
+            return new Tuple2<>(year, occurrence);
         };
 
         return func;
-    } // end getCommodity()
+    } // end getYear()
 
-} // end Analysis01
+} // end Analysis02
