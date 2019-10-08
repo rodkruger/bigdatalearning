@@ -1,6 +1,7 @@
 package br.com.pucpr.posgraduacao.ia.bigdata.spark;
 
 import br.com.pucpr.posgraduacao.ia.bigdata.spark.enums.TransactionColsEnum;
+import br.com.pucpr.posgraduacao.ia.bigdata.spark.utils.AnalysisUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.spark.SparkConf;
@@ -40,7 +41,7 @@ public class Analysis01 {
         // Just to read the output in a more user friendly-way ... don't worry, I know about the memory consumption and
         // cluster considerations! :)
         transactions = transactions.coalesce(1);
-        
+
         // Analysis done!
         transactions.saveAsTextFile("out/analysis01.csv");
     }

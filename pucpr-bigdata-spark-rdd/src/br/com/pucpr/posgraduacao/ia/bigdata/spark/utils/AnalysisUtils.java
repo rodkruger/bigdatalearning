@@ -1,4 +1,4 @@
-package br.com.pucpr.posgraduacao.ia.bigdata.spark;
+package br.com.pucpr.posgraduacao.ia.bigdata.spark.utils;
 
 public class AnalysisUtils {
 
