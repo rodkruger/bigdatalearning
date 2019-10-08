@@ -15,16 +15,16 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 /**
- * Average of weight by commodity, grouped by year
+ * Average os weight by commodity, grouped by year, in Brazil
  */
-public class Analysis04 {
+public class Analysis06 {
 
     public static void main(String args[]) {
         // Application logger
         Logger.getLogger("org").setLevel(Level.ERROR);
 
         // Enable to use as threads as we need
-        SparkConf conf = new SparkConf().setAppName("analysis04").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("analysis05").setMaster("local[*]");
 
         // Setting up the Spark context
         JavaSparkContext sc = new JavaSparkContext(conf);
@@ -32,8 +32,8 @@ public class Analysis04 {
         // Load the values from the .csv data source
         JavaRDD<String> values = sc.textFile("in/transactions.csv");
 
-        // Filter the first line
-        values = values.filter(line -> !line.startsWith("country_or_area;year"));
+        // Filter all the transactions occurred in Brazil
+        values = values.filter(line -> AnalysisUtils.getValue(line, TransactionColsEnum.COUNTRY.getValue()).equals("Brazil"));
 
         // Mapping the occurence of a transaction for an year
         JavaPairRDD<CommodityYearKey, AvgCount> transactions = values.mapToPair(getCommodityByYear());
@@ -53,7 +53,7 @@ public class Analysis04 {
         average = average.coalesce(1);
 
         // Analysis done!
-        average.saveAsTextFile("out/analysis04.csv");
+        average.saveAsTextFile("out/analysis05.csv");
     }
 
     /**
@@ -77,6 +77,6 @@ public class Analysis04 {
         };
 
         return func;
-    } // end getCommodityByYear()
+    } // end getYear()
 
-} // end Analysis04
+} // end Analysis05

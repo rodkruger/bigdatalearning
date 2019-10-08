@@ -72,6 +72,6 @@ public class Analysis03 {
         };
 
         return func;
-    } // end getYear()
+    } // end getCommodity()
 
-} // end Analysis02
+} // end Analysis03
