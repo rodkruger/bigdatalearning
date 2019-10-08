@@ -15,7 +15,7 @@ import org.apache.spark.api.java.function.PairFunction;
 import scala.Tuple2;
 
 /**
- * Average os weight by commodity, grouped by year, in Brazil
+ * Average of value / weight by commodity, grouped by year, in Brazil
  */
 public class Analysis06 {
 
@@ -53,7 +53,7 @@ public class Analysis06 {
         average = average.coalesce(1);
 
         // Analysis done!
-        average.saveAsTextFile("out/analysis05.csv");
+        average.saveAsTextFile("out/analysis06.csv");
     }
 
     /**
@@ -71,12 +71,17 @@ public class Analysis06 {
                     values[TransactionColsEnum.YEAR.getValue()]);
 
             String weight = values[TransactionColsEnum.WEIGHTKG.getValue()];
-            AvgCount value = new AvgCount(1, Double.valueOf(StringUtils.isNotEmpty(weight) ? Double.valueOf(weight) : 0.0d));
+            String tradeUsd = values[TransactionColsEnum.TRADEUSD.getValue()];
+
+            Double dWeight = StringUtils.isNotEmpty(weight) ? Double.valueOf(weight) : 0.0d;
+            Double dTradeUsd = StringUtils.isNotEmpty(tradeUsd) ? Double.valueOf(tradeUsd) : 0.0d;
+
+            AvgCount value = new AvgCount(1, dWeight > 0 ? dTradeUsd / dWeight : 0.0d);
 
             return new Tuple2<>(key, value);
         };
 
         return func;
-    } // end getYear()
+    } // end getCommodityByYear()
 
-} // end Analysis05
+} // end Analysis06
