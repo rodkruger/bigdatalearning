@@ -4,34 +4,35 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Key to group transactions by commodity and year
+ * Key to group transactions by flow and year
  */
-public class CommodityYearKey implements Serializable, Comparable {
+public class FlowYearKey implements Serializable, Comparable {
 
     /**
-     * A commodity
+     * A flow
      */
-    private String commodity;
+    private String flow;
 
     /**
      * An year
      */
     private String year;
 
-    public CommodityYearKey() {
+    public FlowYearKey() {
+
     }
 
-    public CommodityYearKey(String commodity, String year) {
-        this.commodity = commodity;
+    public FlowYearKey(String flow, String year) {
+        this.flow = flow;
         this.year = year;
     }
 
-    public String getCommodity() {
-        return commodity;
+    public String getFlow() {
+        return flow;
     }
 
-    public void setCommodity(String commodity) {
-        this.commodity = commodity;
+    public void setFlow(String flow) {
+        this.flow = flow;
     }
 
     public String getYear() {
@@ -46,24 +47,23 @@ public class CommodityYearKey implements Serializable, Comparable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CommodityYearKey that = (CommodityYearKey) o;
-        return Objects.equals(commodity, that.commodity) &&
+        FlowYearKey that = (FlowYearKey) o;
+        return Objects.equals(flow, that.flow) &&
                 Objects.equals(year, that.year);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commodity, year);
+        return Objects.hash(flow, year);
     }
 
     @Override
     public String toString() {
-        return getCommodity().concat("/").concat(getYear());
+        return getFlow().concat("/").concat(getYear());
     }
 
     @Override
     public int compareTo(Object o) {
         return this.toString().compareTo(o.toString());
     }
-
-} // end CommodityYearKey
+}
