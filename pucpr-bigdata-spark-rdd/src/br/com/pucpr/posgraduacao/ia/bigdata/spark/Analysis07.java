@@ -67,12 +67,14 @@ public class Analysis07 {
             String year = values[TransactionColsEnum.COMMODITY.getValue()];
 
             String weight = values[TransactionColsEnum.WEIGHTKG.getValue()];
+            String qty = values[TransactionColsEnum.QUANTITY.getValue()];
             String tradeUsd = values[TransactionColsEnum.TRADEUSD.getValue()];
 
             Double dWeight = StringUtils.isNotEmpty(weight) ? Double.valueOf(weight) : 0.0d;
+            Double dQty = StringUtils.isNotEmpty(qty) ? Double.valueOf(qty) : 0.0d;
             Double dTradeUsd = StringUtils.isNotEmpty(tradeUsd) ? Double.valueOf(tradeUsd) : 0.0d;
 
-            Double value = dWeight > 0 ? dTradeUsd / dWeight : 0.0d;
+            Double value = dWeight > 0 ? dTradeUsd / (dWeight / dQty) : 0.0d;
 
             return new Tuple2<>(year, value);
         };
@@ -80,4 +82,4 @@ public class Analysis07 {
         return func;
     } // end getCommodity()
 
-} // end Analysis03
+} // end Analysis07

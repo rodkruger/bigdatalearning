@@ -38,6 +38,9 @@ public class Analysis02 {
         // Group all the occurences and sum all the values
         transactions = transactions.reduceByKey((x, y) -> x + y);
 
+        // Sort by key
+        transactions = transactions.sortByKey();
+
         // Just to read the output in a more user friendly-way ... don't worry, I know about the memory consumption and
         // cluster considerations! :)
         transactions = transactions.coalesce(1);
