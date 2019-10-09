@@ -7,7 +7,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.ml.Pipeline;
 import org.apache.spark.ml.PipelineModel;
 import org.apache.spark.ml.PipelineStage;
-import org.apache.spark.ml.classification.DecisionTreeClassifier;
+import org.apache.spark.ml.classification.GBTClassifier;
 import org.apache.spark.ml.feature.IndexToString;
 import org.apache.spark.ml.feature.StringIndexer;
 import org.apache.spark.ml.feature.StringIndexerModel;
@@ -23,7 +23,7 @@ import scala.Tuple2;
 
 import static org.apache.spark.sql.functions.col;
 
-public class Analysis01 {
+public class Analysis03 {
 
     public static final String KEY = "HS_CPF";
 
@@ -91,7 +91,7 @@ public class Analysis01 {
         testDataset = setFeatureTypeToDouble(testDataset);
 
         // Declaring a Decision Tree Classifier, and setting the corresponding columns of Label and Features
-        DecisionTreeClassifier dt = new DecisionTreeClassifier()
+        GBTClassifier dt = new GBTClassifier()
                 .setLabelCol("indexedLabel")
                 .setFeaturesCol("indexedFeatures");
 
